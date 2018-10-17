@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件處理2-註冊事件</title>
+    <script type="text/javascript">
+        function init(){
+            var btn = document.getElementById("btn");
+            // btn.onclick = function(){
+            //     alert("hello");
+            // }
+            var handler = function(){
+                    alert("clicked");
+            }
+            btn.addEventListener("click"/*發生click 處理後者函式事件*/,handler);
+        }
+    </script>
+</head>
+
+<body onload = "init();">
+    <button id="btn">click</button>
+</body>
+</html>

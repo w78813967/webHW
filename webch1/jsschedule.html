@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>schedule 自動排程</title>
+    <script type="text/javascript">
+        var timer_min;
+        var timer_sec;
+        function init(){
+            window.setTimeout(countdown, 1000);//1s後
+            timer_min = document.getElementById("timer_min");
+            timer_sec = document.getElementById("timer_sec");
+        }
+        function countdown(){
+            if((timer_min.innerHTML >0) || (timer_sec.innerHTML >0)){
+                if(timer_sec.innerHTML == 0){
+                timer_min.innerHTML = timer_min.innerHTML-1;
+                timer_sec.innerHTML = 59;
+            }
+            else{
+                timer_sec.innerHTML = timer_sec.innerHTML-1;
+            }
+           
+            window.setTimeout(countdown, 1000);//1s後
+            }
+            
+        }
+    </script>
+</head>
+<body onload="init();">
+    <div>
+        <span id="timer_min">1</span>
+        <p>:</p>
+        <span id="timer_sec">0</span>
+    </div>
+    
+    
+</body>
+</html>

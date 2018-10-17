@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        //改變網頁內容
+    function change(){
+       var spanObj =  document.getElementById("love");
+       spanObj.innerHTML = "love";
+       spanObj.style.color = "red";
+       spanObj.style.fontSize = "20px";
+    }
+    </script>
+</head>
+<body>
+        <div>
+            hello yoto , he <span id="love">hate</span> you
+        </div>
+    <button onclick="change();">yo</button>
+    
+</body>
+</html>
