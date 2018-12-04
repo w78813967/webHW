@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>vue class for loop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for='i in 9'>
+            <h3>{{ i }}</h3>
+            <div v-for="j in 9">{{ i }} x {{ j }} = {{ i*j }}</div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app'
+        });
+    </script>
+</body>
+</html>

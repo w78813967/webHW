@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="part2">
+        <p>你最喜歡的電影是：{{ faverite }}</p>
+        <input v-model="faverite">
+        <p>你對他的評價為：{{score}} 分</p>
+        <button v-on:click="btnClick('1')">1</button>
+        <button v-on:click="btnClick('2')">2</button>
+        <button v-on:click="btnClick('3')">3</button>
+        <button @click="btnClick('4')">4</button>
+        <button @click="btnClick('5')">5</button>
+    </div>
+    <div id="app">
+        <p v-if="open">2018電影熱門排行</p>
+        <ol>
+            <li v-for="(movie,index) in movies">
+               {{ movie.name}} - {{ movie.hot }} 觀看數 
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        var part2 = new Vue({
+            el:'#part2',
+            data:{
+                faverite:'',
+                score:''
+            },
+            methods:{
+                btnClick:function(mscore){
+                    this.score = mscore
+                },
+            },
+        });
+        var app = new Vue({
+            el:'#app',
+            data:{
+               open:true,
+               movies: [
+                    {name:'無敵破壞王2',hot:666},
+                    {name:'葛林黛華德的罪刑',hot:450},
+                    {name:'誰先愛上他的',hot:500},
+               ],
+            },
+        });
+    </script>
+</body>
+</html>
